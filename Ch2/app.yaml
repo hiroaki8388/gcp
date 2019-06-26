@@ -1,0 +1,17 @@
+# 2018年からflex環境でも3系が動くようになった
+# 2系の場合と設定がやや異なるため原著をやや修正
+# 変更点の詳細は[こちら](https://cloud.google.com/appengine/docs/standard/python3/python-differences)
+
+runtime python37
+env: flex
+service: flights
+manual_scaling:
+  instance: 1
+
+env_variables:
+  # 自身の設定したbucket名に適宜書き換え
+  CLOUD_STORAGE_BUCKET: flight-records-sds-hase
+
+handlers:
+  url: /.*
+  script: auto
