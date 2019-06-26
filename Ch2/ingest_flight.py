@@ -1,8 +1,3 @@
-"""事前準備
-https://console.cloud.google.com/apis/credentials?project=scalable-data-science&authuser=3&folder&hl=ja&organizationId&supportedpurview=project
-で認証情報を登録後 ./env配下に置くこと
-とすること
-"""
 #%%
 import os
 import logging
@@ -13,9 +8,6 @@ from  google.cloud import storage
 import datetime
 import tempfile
 
-
-
-#%%
 
 
 # 固定値
