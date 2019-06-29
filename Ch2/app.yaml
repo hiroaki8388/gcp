@@ -4,15 +4,14 @@
 runtime: python
 runtime_config:
   python_version: 3
+
 env: flex
 service: default
 manual_scaling:
   instances: 1
+entrypoint: gunicorn -b :$PORT main:app
 
 env_variables:
   # 自身の設定したbucket名に適宜書き換え
   CLOUD_STORAGE_BUCKET: flight-records-sds-hase
 
-handlers:
-  url: /.*
-  script: auto
