@@ -9,7 +9,9 @@ env: flex
 service: default
 manual_scaling:
   instances: 1
-entrypoint: gunicorn -b :$PORT main:app
+# timeoutを長めに設定しないのworkerがtimeout担って落ちる
+entrypoint: gunicorn -b :$PORT ingestapp:app --timeout 120
+
 
 env_variables:
   # 自身の設定したbucket名に適宜書き換え
