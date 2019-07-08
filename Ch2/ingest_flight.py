@@ -68,7 +68,7 @@ def verify_ingest(csvfile):
             logging.error(msg)
             raise UnexpectedFormat(msg)
 
-        if next(csvfp, None) == None:
+        if next(csvfp, None) is  None:
             os.remove(csvfile)
             msg = "Received a file from BTS that has only the header and no content"
 
