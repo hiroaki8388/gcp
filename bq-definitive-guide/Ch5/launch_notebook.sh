@@ -1,9 +1,9 @@
 
 #!/bin/bash
 
-IMAGE=--image-family=tf-latest-cpu
-INSTANCE_NAME=dlvm
-MAIL=hasepappagcp@gmail.com
+IMAGE=--image-family=tf-latest-cpu # cpuに特化したimage type
+INSTANCE_NAME=dlvm # 任意
+MAIL=hasepappagcp@gmail.com # 要変更
 
 echo "Launching $INSTANCE_NAME"
 gcloud compute instances create ${INSTANCE_NAME} \
@@ -28,3 +28,5 @@ while true; do
    fi
 done
 
+# あとは同一のgoogle clientでproxyにブラウザでアクセスする
+# gcloud compute ssh hase@dlvm --ssh-key-file ~/.ssh/id_rsa とすれば、consoleからもアクセス可能
